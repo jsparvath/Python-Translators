@@ -35,8 +35,10 @@ class GoogleTranslator(Translator):
         )
 
         self.key = key
-        self.translation_service = build('translate', 'v2', developerKey=key)
-
+        try:
+            self.translation_service = build('translate', 'v2', developerKey=key)
+        except:
+            raise Exception('jonathan from google')
         self.add_query_processor(EscapeHtml())
         self.add_response_processor(UnescapeHtml())
 
