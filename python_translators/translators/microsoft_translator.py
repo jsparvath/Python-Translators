@@ -123,8 +123,7 @@ class MicrosoftTranslator(Translator):
 
         logger.info(format_dict_for_logging(dict(EVENT='MICROSOFT_RECEIVED_TOKEN', TIME_PASSED=time_passed)))
         if response.status_code == 401:
-            raise Exception('Access denied due to invalid subscription key. Make sure to provide a valid key for an '
-                            'active subscription.')
+            raise Exception('jonathan here')
 
         if response.status_code != 200:
             raise Exception('Something went wrong when requesting a new token.')
